@@ -1,0 +1,23 @@
+{% extends "parts/base.twig" %}
+
+{% block body %}
+<h2 class="mt-4">Authorization</h2>
+
+{% if auth_message is not null %}
+<div class="alert alert-primary mt-5" role="alert">
+    {{ auth_message }}
+</div>
+{% endif %}
+
+<form action="/mysite/login-post" method="post" class="mt-3">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" id="username" placeholder="Username" value="{{formData['username']}}">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="*******">
+    </div>
+    <button class="btn btn-primary" type="submit">Authorization</button>
+</form>
+{% endblock %}

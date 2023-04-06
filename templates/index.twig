@@ -1,0 +1,21 @@
+{% extends "parts/base.twig" %}
+
+{% block body %}
+<h1 class="mt-5">Home page</h1>
+{% if is_auth %}
+<div class="alert alert-success mt-3" role="alert">
+    Welcome
+</div>
+{% else %}
+<div class="alert alert-danger mt-3" role="alert">
+    You are not logged in
+</div>
+{% endif %}
+
+{% if success %}
+<div class="alert alert-success mt-3" role="alert">
+    User is successfully registered
+</div>
+{% endif %}
+
+{% endblock %}
